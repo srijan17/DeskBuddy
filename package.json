@@ -1,0 +1,33 @@
+{
+  "name": "clip",
+  "version": "1.0.0",
+  "main": "electron/main.ts",
+  "scripts": {
+    "build:electron": "tsc -p tsconfig.json",
+    "package": "npm run build && npm run build:electron && electron-builder",
+    "electron": "electron .",
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron dist/electron/main.js\"",
+    "build": "vite build && tsc",
+    "start": "electron dist/electron/main.js"
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "concurrently": "^9.1.2",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
